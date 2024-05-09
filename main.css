@@ -1,24 +1,11 @@
-body {
+* {
     margin: 0;
-    background: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    padding: 0;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-header {
-    background: none;
-}
-
-
-header::after {
-    content: '';
-    display: table;
-    clear: both;
+body {
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .logo {
@@ -29,63 +16,74 @@ header::after {
     color: black;
 }
 
+
+
 nav {
-    float: right;
+    background-color: white;
 }
 
 nav ul {
-    margin: 0;
-    padding: 0;
+    width: 100%;
     list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 nav li {
-    display: inline-block;
-    margin-left: 70px;
-    padding: 13px 0;
-    position: relative;
-
+    height: 50px;
 }
 
 nav ul li a {
-    color: black;
+    height: 100%;
+    padding: 0 30px;
     text-decoration: none;
-    text-transform: uppercase;
-    
-}
-
-nav ul li a:hover {
+    display: flex;
+    align-items: center;
     color: black;
+    text-transform: lowercase;
 }
 
-nav ul li a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    width: 0%;
-    background-color: black;
-    position: absolute;
-    bottom: 10px;
-    transition: all ease-in-out 250ms;
+
+nav li:first-child {
+    margin-right: auto;
 }
 
-nav ul li a:hover::before {
-width: 100%;
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    backdrop-filter: blur(10px);
 }
 
-.hollow-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: 2px solid black;
-    border-radius: 5px;
-    color: black;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    background-color: white;
-  }
+.sidebar li {
+    width: 100%;
+}
 
-.hollow-btn:hover {
-    background-color: black;
-    color: white;
-    cursor:pointer;
+.sidebar a {
+    width: 100%;
+}
+
+@media(width <= 970px) {
+    .hideOnMobile {
+        display: none;
     }
+}
+.hideOnLarge {
+    display: block;
+}
+@media(width >= 971px) {
+    .hideOnLarge {
+        display: none;
+    }
+}
+
