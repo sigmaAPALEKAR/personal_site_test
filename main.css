@@ -84,6 +84,7 @@ nav li:first-child {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
