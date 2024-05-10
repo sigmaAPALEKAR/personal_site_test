@@ -8,14 +8,14 @@
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
-		<header>
+		<header  class="sticky">
 				<nav>
 					<ul class="sidebar">
 						<li onclick=closeSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-						<li><a href="https://github.com/joshua-mae">Github</a></li>
-						<li><a href="https://www.linkedin.com/in/joshuazmae">LinkedIn</a></li>
-						<li><a href="experience.html">Experience</a></li>
-						<li><a href="mailto:joshuazmae@gmail.com">Contact Me</a></li>
+						<li class="navAnimation"><a href="https://github.com/joshua-mae">Github</a></li>
+						<li class="navAnimation"><a href="https://www.linkedin.com/in/joshuazmae">LinkedIn</a></li>
+						<li class="navAnimation"><a href="experience.html">Experience</a></li>
+						<li class="navAnimation"><a href="mailto:joshuazmae@gmail.com">Contact Me</a></li>
 					</ul>
 					<ul>
 						<li class="logo"><a href="#">Joshua Mae</a></li>
@@ -33,7 +33,37 @@
 				Although, I am interested in learning about new tech stacks and working on a variety of projects.  
 				If you are in need of a software developer, contact me!</p>
 		</div>
-
+		<div class="projects">
+			<h2>Projects:</h2>
+			<div class="row">
+			  <div class="image-container">
+				<img src="project-photos/nasa-space-photo.jpg" alt="Floating man in space">
+				<div class="overlay">
+				  <p>NASA SwiftUI APOD</p>
+				</div>
+			  </div>
+			  <div class="image-container">
+				<img src="project-photos/kotlin-photo.jpg" alt="Kotlin logo on a stone">
+				<div class="overlay">
+				  <p>Future Android App</p>
+				</div>
+			  </div>
+			</div>
+			<div class="row">
+				<div class="image-container">
+				  <img src="project-photos/vmd-image.png" alt="VMD Application">
+				  <div class="overlay">
+					<p>Bacterial Microcompartments research project</p>
+				  </div>
+				</div>
+				<div class="image-container">
+				  <img src="project-photos/nasa-space-photo.jpg" alt="Floating man in space">
+				  <div class="overlay">
+					<p>Future iOS app</p>
+				  </div>
+				</div>
+			  </div>
+		  </div>
 		<!-- TODO Add project showcase -->
 		<!-- TODO Experience timeline-->
 		<!-- TODO Sticky header-->
