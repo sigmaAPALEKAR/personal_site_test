@@ -23,5 +23,5 @@ jobs:
 
     - name: Run Playwright tests
       run: |
-        pytest tests/
+        pytest playwright-tests/
 
