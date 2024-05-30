@@ -1,27 +1,19 @@
 from playwright.sync_api import sync_playwright
 
-def test_example():
+def test_firstload(browser_type):
     with sync_playwright() as p:
-        # Test with Chromium
-        browser = p.chromium.launch()
+        browser = getattr(p, browser_type).launch(headless=False)  
         page = browser.new_page()
         page.goto("https://joshuamae.com")
-        assert page.title() == "Joshua Mae"
+        title = page.title()
+        assert title == "Joshua Mae", f"Title was '{title}', but expected 'Joshua Mae'"
         browser.close()
 
-        # Test with Firefox
-        browser = p.firefox.launch()
-        page = browser.new_page()
-        page.goto("https://joshuamae.com")
-        assert page.title() == "Joshua Mae"
-        browser.close()
+def main():
+    browsers = ["chromium", "firefox", "webkit"]
+    for browser_type in browsers:
+        print(f"Testing on {browser_type}...")
+        test_example(browser_type)
 
-        # Test with WebKit
-        browser = p.webkit.launch()
-        page = browser.new_page()
-        page.goto("https://joshuamae.com")
-        assert page.title() == "Joshua Mae"
-        browser.close()
-
-# Run the test
-test_example()
+if __name__ == "__main__":
+    main()
