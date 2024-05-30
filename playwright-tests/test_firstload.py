@@ -20,6 +20,6 @@ async def test_title(url, expected_title):
             print(f"{browser_name} - Test passed")
 
 if __name__ == "__main__":
-    url = "https://joshuamae.com.com"
+    url = "https://joshuamae.com"
     expected_title = "Joshua Mae"
     asyncio.run(test_title(url, expected_title))
