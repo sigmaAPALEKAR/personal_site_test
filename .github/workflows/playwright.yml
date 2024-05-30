@@ -17,27 +17,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-        libwoff1 \
-        libvpx7 \
-        libevent-2.1-7 \
-        libopus0 \
-        gstreamer1.0-plugins-base \
-        gstreamer1.0-libav \
-        gstreamer1.0-plugins-good \
-        gstreamer1.0-plugins-bad \
-        gstreamer1.0-plugins-ugly \
-        gstreamer1.0-tools \
-        libharfbuzz-icu0 \
-        libhyphen0 \
-        libmanette-0.2-0 \
-        flite1-dev \
-        libgles2 \
-        libx264-155
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         playwright install
+        playwright install-deps
 
     - name: Run Playwright tests
       run: |
